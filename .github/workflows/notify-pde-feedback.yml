@@ -31,7 +31,7 @@ jobs:
           app-id: ${{ secrets.PDE_NOTIFY_APP_ID }}
           private-key: ${{ secrets.PDE_NOTIFY_APP_PRIVATE_KEY }}
           owner: J4mes0n-04
-          repositories: PDE_ENVIRONMENT
+          repositories: pde-environment
 
       - name: Create PDE notification issue
         env:
@@ -57,8 +57,8 @@ jobs:
             echo "- event_type: \`qsre-feedback\`"
             echo "- source_repository: \`$SOURCE_REPOSITORY\`"
             echo "- source_sha: \`$SOURCE_SHA\`"
-            echo "- target_repository: \`J4mes0n-04/PDE_ENVIRONMENT\`"
+            echo "- target_repository: \`J4mes0n-04/pde-environment\`"
             echo "- outcome_id: \`$OUTCOME_ID\`"
             echo "- artifact_path: \`$ARTIFACT_PATH\`"
           } > /tmp/cross-repo-issue.md
-          gh issue create --repo "J4mes0n-04/PDE_ENVIRONMENT" --title "[qsre-feedback] $OUTCOME_ID" --body-file /tmp/cross-repo-issue.md
+          gh issue create --repo "J4mes0n-04/pde-environment" --title "[qsre-feedback] $OUTCOME_ID" --body-file /tmp/cross-repo-issue.md
