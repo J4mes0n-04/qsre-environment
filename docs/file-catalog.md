@@ -16,7 +16,7 @@
 - `.agents/skills/` — четыре начальных QSRE skills.
 - `.cursor/rules/` — ограничения независимой проверки.
 - `.codex/config.toml` — подготовленный и выключенный OpenSpace local MCP.
-- `.github/` — CODEOWNERS, PR template и CI.
+- `.github/` — CODEOWNERS, PR template, локальный CI, уведомление PDE и приём ASE Evidence Ready.
 - `workspaces/projects/` — review records.
 - `vendor/engineering-control/` — read-only submodule общей основы.
 

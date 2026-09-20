@@ -25,3 +25,5 @@
 
 QSRE формирует `qsre-to-pde.json`, указывает evidence и требуемое решение. PDE отвечает через `pde_response`; дефект реализации отдельно направляется ASE.
 
+После ручной проверки feedback можно запустить workflow `notify-pde-feedback`. Он создаёт Issue в PDE и не объединяет Pull Request.
+
