@@ -78,6 +78,17 @@ git submodule update --init --recursive
 
 `vendor/engineering-control` является read-only dependency. Обновление допускается только через отдельный Pull Request и compatibility checks.
 
+## Межрепозиторные уведомления
+
+Пока pin остаётся `v1.0.0-rc.1`, QSRE не вызывает reusable workflows из `engineering-control`. Локальный `validate-qsre.yml` остаётся обязательной проверкой.
+
+Ручные события:
+
+- `listen-ase-evidence.yml` — Issue о готовности evidence со стороны ASE;
+- `notify-pde-feedback.yml` — Issue в PDE по обратной связи QSRE.
+
+Оба workflow запускаются только через `workflow_dispatch`. Они не принимают release decision, не меняют Pack и не объединяют Pull Request. Для `notify-pde-feedback` нужны секреты GitHub App в Environment `notify-pde`.
+
 ## Дополнительные инструменты
 
 OpenSpace, Unleash, OpenTelemetry и Grafana первоначально выключены. Они включаются только после настройки подключения, владельцев, хранения данных и security review.
