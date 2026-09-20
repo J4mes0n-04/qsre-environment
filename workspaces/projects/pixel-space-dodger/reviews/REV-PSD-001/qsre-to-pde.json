@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "contract_type": "qsre-to-pde",
+  "contract_version": "1.0.0",
+  "feedback_id": "QF-PSD-001",
+  "created_at": "2026-09-20T19:12:31Z",
+  "outcome_id": "OUT-PSD-001",
+  "pack": {
+    "repository": "https://github.com/J4mes0n-04/PDE_ENVIRONMENT",
+    "commit_sha": "5fa996cf140a65109af3ccebd3848e1d7566745d",
+    "path": "workspaces/projects/pixel-space-dodger/outcomes/OUT-PSD-001-pixel-space-dodger/pack.json",
+    "version": "1.0.0"
+  },
+  "implementation": {
+    "repository": "https://github.com/J4mes0n-04/ase-environment",
+    "commit_sha": "0c61529ce0ec76448c7793d6beb1e49efc135ede",
+    "path": "workspaces/projects/pixel-space-dodger/deliveries/DEL-PSD-001"
+  },
+  "feedback_type": "clarification",
+  "severity": "major",
+  "observation": {
+    "summary": "QSRE провёл независимый runtime-прогон локального продукта fbfb06ead2b0cc6456a85356a2f2c12a56f5098e и не может approve: отсутствует ase-to-qsre.json, у продукта нет GitHub remote, delivery ASE не на origin, ASE evidence-map без immutable URL/скриншотов.",
+    "observed_at": "2026-09-20T19:12:00Z",
+    "environment": "qsre-local-browser"
+  },
+  "affected_identifiers": [
+    "AC-025",
+    "REL-001",
+    "SLICE-PSD-001"
+  ],
+  "evidence": [
+    {
+      "evidence_id": "EVD-901",
+      "reference": {
+        "repository": "https://github.com/J4mes0n-04/PDE_ENVIRONMENT",
+        "commit_sha": "5fa996cf140a65109af3ccebd3848e1d7566745d",
+        "path": "workspaces/projects/pixel-space-dodger/outcomes/OUT-PSD-001-pixel-space-dodger/pack.json"
+      },
+      "summary": "Закреплённый Pack требует проверяемый срез и evidence; формальный ASE→QSRE handoff и публичный URI продукта не предоставлены"
+    },
+    {
+      "evidence_id": "EVD-902",
+      "reference": {
+        "repository": "https://github.com/J4mes0n-04/engineering-control",
+        "commit_sha": "abd0982171341438cab80267099b951a2027be0b",
+        "path": "contracts/ase-to-qsre.schema.json"
+      },
+      "summary": "Contract ASE→QSRE v1.0.0 требует coverage, evidence_bundle и implementation.repository/PR; вход в QSRE не получен"
+    }
+  ],
+  "required_decision": {
+    "summary": "Поручить ASE опубликовать продукт и delivery, передать валидный ase-to-qsre.json с immutable evidence, затем повторить QSRE review",
+    "due_at": "2026-09-21T18:00:00Z",
+    "release_impact": "hold"
+  },
+  "qsre_owner": "QSRE Owner",
+  "pde_response": {
+    "status": "pending"
+  }
+}
