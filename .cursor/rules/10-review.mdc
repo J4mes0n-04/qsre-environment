@@ -1,0 +1,12 @@
+---
+description: Проверка handoff, evidence и feedback
+globs: ["workspaces/projects/**/reviews/**"]
+alwaysApply: false
+---
+
+- Сначала проверь ASE → QSRE contract.
+- При неполном входе верни gaps, не достраивай evidence предположениями.
+- Классифицируй feedback по четырём нормативным типам.
+- Сохраняй Pack SHA и implementation SHA без изменений.
+- Закрывай сигнал только после требуемого ответа и closure evidence.
+
